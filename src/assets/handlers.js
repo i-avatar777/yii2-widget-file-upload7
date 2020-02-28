@@ -16,8 +16,8 @@ var FileUpload7 = {
 
         var uploader = new ss.SimpleUpload({
             button: btn,
-            url: server1 + '/upload/file-upload7',
-            sessionProgressUrl: server1 + '/upload/session-progress',
+            url: server1 + '/upload2/file-upload7',
+            sessionProgressUrl: server1 + '/upload2/session-progress',
             name: 'imgfile',
             multiple: true,
             multipart: true,
