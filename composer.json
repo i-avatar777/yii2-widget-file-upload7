@@ -8,7 +8,7 @@
   "minimum-stability": "stable",
   "require": {
     "php": ">=5.4.0",
-    "i-avatar777/service-date-rus": "*",
+    "i-avatar777/yii2-asset-jquery-upload1": "*",
     "yiisoft/yii2": "*"
   },
   "require-dev": {
