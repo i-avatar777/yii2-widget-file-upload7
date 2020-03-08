@@ -8,6 +8,7 @@ var FileUpload7 = {
         var allowedExtensions1 = (typeof options.allowedExtensions != 'undefined') ? options.allowedExtensions : ['jpg', 'jpeg', 'png'];
         var accept1 = (typeof options.accept != 'undefined') ? options.accept : 'image/*';
         var data1 = (typeof options.data != 'undefined') ? options.data : {};
+        var controller1 = (typeof options.controller != 'undefined') ? options.controller : 'upload2';
 
         var btn = $(selector).find('.upload-btn')[0];
         var wrap = $(selector).find('.pic-progress-wrap')[0];
@@ -16,8 +17,8 @@ var FileUpload7 = {
 
         var uploader = new ss.SimpleUpload({
             button: btn,
-            url: server1 + '/upload2/file-upload7',
-            sessionProgressUrl: server1 + '/upload2/session-progress',
+            url: server1 + '/'+controller1+'/file-upload7',
+            sessionProgressUrl: server1 + '/'+controller1+'/session-progress',
             name: 'imgfile',
             multiple: true,
             multipart: true,
