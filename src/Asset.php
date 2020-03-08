@@ -15,7 +15,7 @@ use yii\web\AssetBundle;
  */
 class Asset extends AssetBundle
 {
-    public $sourcePath = '@common/widgets/FileUpload7/assets';
+    public $sourcePath = '@vendor/i-avatar777/yii2-widget-file-upload7/src/assets';
 
     public $css = [
     ];
@@ -26,6 +26,6 @@ class Asset extends AssetBundle
 
     public $depends = [
         '\yii\web\JqueryAsset',
-        '\common\assets\JqueryUpload',
+        '\iAvatar777\assets\JqueryUpload1\JqueryUpload',
     ];
 }

@@ -4,7 +4,7 @@ var FileUpload7 = {
         var selector = (typeof options.selector != 'undefined') ? options.selector : '.FileUpload7';
         var functionSuccess = (typeof options.functionSuccess != 'undefined') ? options.functionSuccess : null;
         var maxSize1 = (typeof options.maxSize != 'undefined') ? options.maxSize : '1000';
-        var server1 = (typeof options.server != 'undefined') ? options.server : 'https://cloud1.i-am-avatar.com';
+        var server1 = (typeof options.server != 'undefined') ? options.server : '';
         var allowedExtensions1 = (typeof options.allowedExtensions != 'undefined') ? options.allowedExtensions : ['jpg', 'jpeg', 'png'];
         var accept1 = (typeof options.accept != 'undefined') ? options.accept : 'image/*';
         var data1 = (typeof options.data != 'undefined') ? options.data : {};
@@ -17,8 +17,8 @@ var FileUpload7 = {
 
         var uploader = new ss.SimpleUpload({
             button: btn,
-            url: server1 + '/'+controller1+'/file-upload7',
-            sessionProgressUrl: server1 + '/'+controller1+'/session-progress',
+            url: server1 + '/' + controller1 + '/file-upload7',
+            sessionProgressUrl: server1 + '/' + controller1 + '/session-progress',
             name: 'imgfile',
             multiple: true,
             multipart: true,
@@ -56,17 +56,17 @@ var FileUpload7 = {
                 self.setFileSizeBox(size);
 
                 errBox.innerHTML = '';
-                btn.value = 'Choose another file';
+                btn.value = 'Выбери файл';
             },
             onSizeError: function() {
-                errBox.innerHTML = 'Files may not exceed ' + maxSize1 + 'K.';
+                errBox.innerHTML = 'Файл не может быть более ' + maxSize1 + 'K.';
             },
             onExtError: function() {
                 errBox.innerHTML = 'Invalid file type. Please select a PNG, JPG, GIF image.';
             },
             onComplete: function(file, response, btn) {
                 if (!response) {
-                    errBox.innerHTML = 'Unable to upload file';
+                    errBox.innerHTML = 'Не могу загрузить файл';
                 }
                 if (response.success === true) {
 
