@@ -11,9 +11,12 @@
 ## Установка
 ## Пример использования
 
-\iAvatar777\widgets\FileUpload7\FileUpload::widget([
-    
-])
+```php
+<?= \iAvatar777\widgets\FileUpload7\FileUpload::widget([
+    'model'      => $model,
+    'attribute'  => 'file',
+]) ?>
+```
 
 
 
