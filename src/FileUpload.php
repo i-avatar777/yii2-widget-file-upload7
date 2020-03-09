@@ -119,9 +119,8 @@ class FileUpload extends InputWidget
         if ($this->update) {
             $options['data']['update'] = Json::encode($this->update);
         }
-        if (isset($this->settings['controller'])) {
-            $options['controller'] = $this->settings['controller'];
-        }
+
+        $options['controller'] = ArrayHelper::getValue($this->settings, 'controller', 'upload');
         $options = ArrayHelper::merge($options, $this->settings);
         $jsonOptions = Json::encode($options);
         $this->getView()->registerJs("FileUpload7.init({$jsonOptions});");
