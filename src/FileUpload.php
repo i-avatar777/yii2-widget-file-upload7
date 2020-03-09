@@ -56,6 +56,9 @@ class FileUpload extends InputWidget
             $attrubute = $this->attribute;
             $this->value = $this->model->$attrubute;
         }
+        if (is_null($this->settings)) {
+            $this->settings = [];
+        }
     }
 
     /**
