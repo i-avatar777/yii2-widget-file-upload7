@@ -41,6 +41,7 @@ class FileUpload extends InputWidget
      * - allowedExtensions - Array - массив рисширений которые можно грузить, по умолчанию ['jpg', 'jpeg', 'png']
      * - data - Array - массив для отправки постом при загрузке
      * - controller - string - идентификатор контроллера
+     * - server - string - адрес сервера для загрузки
      */
     public $settings;
 
@@ -144,10 +145,11 @@ class FileUpload extends InputWidget
      */
     public function getServer()
     {
-        /** @var \common\services\AvatarCloud $cloud */
-        $cloud = Yii::$app->AvatarCloud;
+        if (isset($this->settings['server'])) {
+            return $this->settings['server'];
+        }
 
-        return $cloud->getServer();
+        return '';
     }
 
     /**
