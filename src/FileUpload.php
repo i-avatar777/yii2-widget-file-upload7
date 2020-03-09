@@ -40,6 +40,7 @@ class FileUpload extends InputWidget
      * - maxSize - int - кол-во КБ
      * - allowedExtensions - Array - массив рисширений которые можно грузить, по умолчанию ['jpg', 'jpeg', 'png']
      * - data - Array - массив для отправки постом при загрузке
+     * - controller - string - идентификатор контроллера
      */
     public $settings;
 
@@ -113,6 +114,9 @@ class FileUpload extends InputWidget
         ];
         if ($this->update) {
             $options['data']['update'] = Json::encode($this->update);
+        }
+        if (isset($this->settings['controller'])) {
+            $options['controller'] = $this->settings['controller'];
         }
         $options = ArrayHelper::merge($options, $this->settings);
         $jsonOptions = Json::encode($options);
