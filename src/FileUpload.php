@@ -28,10 +28,10 @@ use cs\services\UploadFolderDispatcher;
 class FileUpload extends InputWidget
 {
     /** с обрезкой, по умолчанию */
-    const MODE_THUMBNAIL_CUT = ManipulatorInterface::THUMBNAIL_OUTBOUND;
+    const MODE_THUMBNAIL_CUT = 'outbound';
 
     /** вписать */
-    const MODE_THUMBNAIL_FIELDS = ManipulatorInterface::THUMBNAIL_INSET;
+    const MODE_THUMBNAIL_FIELDS = 'inset';
 
     /** вписать с фоном */
     const MODE_THUMBNAIL_WHITE = 'white';
