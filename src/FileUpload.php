@@ -210,6 +210,39 @@ class FileUpload extends InputWidget
         return true;
     }
 
+    /**
+     * @param array $field
+     *
+     * @return bool
+     */
+    public function onBeforeDelete()
+    {
+        $model = $this->model;
+        $attribute = $this->attribute;
+        $value = $model->$attribute;
+
+        if (!is_null($value)) {
+            if ($value != '') {
+                $url = new \cs\services\Url($value);
+                /** @var \common\services\AvatarCloud $cloud */
+                $cloud = Yii::$app->AvatarCloud;
+                $indexList = [];
+                foreach ($this->update as $u) {
+                    $indexList[] = $u['index'];
+                }
+                $response = $cloud->_post($url->scheme . '://' . $url->host, 'upload/file-upload7-delete', [
+                    'file'      => $value,
+                    'indexList' => $indexList,
+                ]);
+                if ($response->statusCode != 200) {
+                    Yii::warning(VarDumper::dumpAsString($response), 'avatar\common\widgets\FileUpload7\FileUpload::onDelete');
+                }
+            }
+        }
+
+        return true;
+    }
+
 
     /**
      * Сохраняет картинку по формату
