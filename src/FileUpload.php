@@ -173,6 +173,19 @@ class FileUpload extends InputWidget
         return $info['dirname'] . '/' . $info['filename'] . '_' . $index . '.' . $ext;
     }
 
+    public static function getFile2($file, $options)
+    {
+        $info = pathinfo($file);
+        $index = $options['index'];
+        if (isset($options['options']['extension'])) {
+            $ext = $options['options']['extension'];
+        } else {
+            $ext = $info['extension'];
+        }
+
+        return $info['dirname'] . '/' . $info['filename'] . '_' . $index . '.' . $ext;
+    }
+
 
     /**
      * @param array $field
